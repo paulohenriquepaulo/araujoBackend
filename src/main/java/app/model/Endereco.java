@@ -38,8 +38,8 @@ public class Endereco {
 	private String rua;
 	
 	@Column(name="UF")
-	@Size(max = 2, min=2)
-	private unidadeFederacao uf;
+	@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
+	private String uf;
 	
 	
 	@Size(min = 1, max = 10, message = "O numero deve ter no mínimo 1 e no máximo 10 caracteres!")
@@ -85,11 +85,11 @@ public class Endereco {
 	}
 
 
-	public unidadeFederacao getUf() {
+	public String getUf() {
 		return uf;
 	}
 
-	public void setUf(unidadeFederacao uf) {
+	public void setUf(String uf) {
 		this.uf = uf;
 	}
 
