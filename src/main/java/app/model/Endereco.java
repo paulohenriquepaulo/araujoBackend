@@ -1,15 +1,11 @@
 package app.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
+@Table(name = "TB_ENDERECO")
 public class Endereco {
 	
 	@Id
@@ -21,24 +17,29 @@ public class Endereco {
 	
 	@Column(name="CEP")
 	@Size(min =9 , max = 9, message = "O CEP deve estar no formato 99999-999")
-	@NotBlank(message = "O cep não pode ser nulo ou vazio!")
+	@NotBlank(message = "O campo cep não pode ser nulo ou vazio!")
 	private String cep;
 	
 	
 	@Column(name = "CIDADE")
 	@Size(max = 100, message = "A Cidade deve conter no máximo 100 caracter!")
+	@NotBlank(message = "O campo Cidade não pode ser nulo ou vazio!")
 	private String cidade;
+
 	
 	@Column(name="BAIRRO")
 	@Size(max = 100, message = "O Bairro deve conter no máximo 100 caracter!")
+	@NotBlank(message = "O campo Bairro não pode ser nulo ou vazio!")
 	private String bairro;
 	
 	@Column(name="RUA")
 	@Size(max = 100, message = "A Rua deve conter no máximo 100 caracter!")
+	@NotBlank(message = "O campo Rua não pode ser nulo ou vazio!")
 	private String rua;
 	
 	@Column(name="UF")
 	@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
+	@NotBlank(message = "O campp UF não pode ser nulo ou vazio!")
 	private String uf;
 	
 	
