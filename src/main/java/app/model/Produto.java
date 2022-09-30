@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 @Table(name = "TB_PRODUTO")
 public class Produto {
 
+
     // codProduto, nome, quantidade,valor, descricao, imagemProduto, disponivel
 
     @Id
