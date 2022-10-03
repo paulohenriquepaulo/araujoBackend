@@ -75,7 +75,9 @@ public class EnderecoRequestDTO {
     }
 
 
-    public String getUf() { return uf; }
+    public String getUf() {
+        return uf;
+    }
 
     public void setUf(String uf) {
         this.uf = uf;
