@@ -9,7 +9,7 @@ public class ItemPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_pedido;
 
     @NotBlank(message = "O Id do carrinho não pode ser vazio")
     @ManyToOne
@@ -34,11 +34,11 @@ public class ItemPedido {
     private Double valorTotal;
 
     public Long getId() {
-        return id;
+        return id_pedido;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_pedido = id;
     }
 
     public Carrinho getCarrinho() {

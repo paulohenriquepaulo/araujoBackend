@@ -2,14 +2,7 @@ package app.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -57,6 +50,9 @@ public class Cliente {
 
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	private List<Endereco> endereco;
+
+	@OneToOne(mappedBy = "cliente", cascade = CascadeType.PERSIST)
+	private Transacao transacao;
 
 	public Long getId() {
 		return id;
@@ -128,5 +124,13 @@ public class Cliente {
 
 	public void setEndereco(List<Endereco> endereco) {
 		this.endereco = endereco;
-	}	
+	}
+
+	public Transacao getTransacao() {
+		return transacao;
+	}
+
+	public void setTransacao(Transacao transacao) {
+		this.transacao = transacao;
+	}
 }
