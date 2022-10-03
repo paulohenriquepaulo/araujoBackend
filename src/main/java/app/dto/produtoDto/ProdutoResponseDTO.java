@@ -1,6 +1,6 @@
 package app.dto.produtoDto;
 
-import app.model.DisponibilidadeProduto;
+import app.model.enums.DisponibilidadeProduto;
 
 public class ProdutoResponseDTO {
 

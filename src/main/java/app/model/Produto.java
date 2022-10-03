@@ -40,8 +40,6 @@ public class Produto {
    @Column(name="Disponibilidade")
    private DisponibilidadeProduto disponibilidade;
 
-    // Getters and setters
-
 
     public Long getCodProduto() {
         return codProduto;
