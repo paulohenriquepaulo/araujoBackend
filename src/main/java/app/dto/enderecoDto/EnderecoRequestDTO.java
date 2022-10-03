@@ -9,8 +9,6 @@ import javax.validation.constraints.Size;
 public class EnderecoRequestDTO {
 
 
-    @OneToOne
-    private Cliente cliente;
 
     @Column(name = "CEP")
     @Size(min = 9, max = 9, message = "O CEP deve estar no formato 99999-999")
@@ -101,9 +99,5 @@ public class EnderecoRequestDTO {
         this.complemento = complemento;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
 
-    public void setCliente(Cliente cliente) { this.cliente = cliente;  }
 }
