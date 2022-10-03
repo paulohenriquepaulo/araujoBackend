@@ -34,8 +34,9 @@ public class Produto {
     @NotBlank(message = "O campo imagem não pode ser nulo ou vazio!")
     private String imagemProduto;
 
-    @Column(name="disponibilidade")
-    private DisponibilidadeProduto disponibilidade;
+   @Enumerated(EnumType.STRING)
+   @Column(name="Disponibilidade")
+   private DisponibilidadeProduto disponibilidade;
 
     // Getters and setters
 
