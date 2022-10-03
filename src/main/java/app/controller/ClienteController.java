@@ -30,8 +30,6 @@ public class ClienteController {
 		Cliente novoCliente = service.cadastarCliente(mapper.toCliente(dto));
 		return ResponseEntity.ok(mapper.toClienteResponseDTO(novoCliente));
 	}
-	
-	
 }
 
 
