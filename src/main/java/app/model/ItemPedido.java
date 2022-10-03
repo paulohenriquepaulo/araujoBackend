@@ -2,7 +2,7 @@ package app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-
+// C
 @Entity
 @Table(name = "TB_ITENS_PEDIDO")
 public class ItemPedido {

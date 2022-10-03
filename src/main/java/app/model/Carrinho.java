@@ -5,7 +5,7 @@ import app.model.enums.StatusPedido;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-
+//c
 @Entity
 public class Carrinho {
 
