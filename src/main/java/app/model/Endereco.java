@@ -1,7 +1,10 @@
 package app.model;
 
+import app.model.enums.UnidadeFederativa;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -37,10 +40,12 @@ public class Endereco {
 	@NotBlank(message = "O campo Rua não pode ser nulo ou vazio!")
 	private String rua;
 	
-	@Column(name="UF")
-	@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
-	@NotBlank(message = "O campp UF não pode ser nulo ou vazio!")
-	private String uf;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "UF")
+	//@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
+	@NotNull(message = "O campo UF não pode ser nulo ou vazio!")
+	private UnidadeFederativa uf;
 	
 	
 	@Size(min = 1, max = 10, message = "O numero deve ter no mínimo 1 e no máximo 10 caracteres!")
@@ -85,12 +90,11 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-
-	public String getUf() {
+	public UnidadeFederativa getUf() {
 		return uf;
 	}
 
-	public void setUf(String uf) {
+	public void setUf(UnidadeFederativa uf) {
 		this.uf = uf;
 	}
 
