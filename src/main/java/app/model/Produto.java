@@ -1,5 +1,7 @@
 package app.model;
 
+import app.model.enums.DisponibilidadeProduto;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

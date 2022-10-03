@@ -54,8 +54,7 @@ public class Cliente {
 	@NotBlank(message = "O RG não pode ser vazio!")
 	@Column(name = "RG", unique = true)
 	private String rg;
-	
-	
+
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	private List<Endereco> endereco;
 
