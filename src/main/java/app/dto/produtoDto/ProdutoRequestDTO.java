@@ -1,8 +1,7 @@
 package app.dto.produtoDto;
 
-import app.model.DisponibilidadeProduto;
+import app.model.enums.DisponibilidadeProduto;
 
-import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
