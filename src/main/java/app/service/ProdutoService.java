@@ -12,6 +12,8 @@ public class ProdutoService {
     private ProdutoRepository repository;
 
     public Produto cadastrarProduto(Produto produto){
-        return repository.save(produto);
+        Produto p = new Produto();
+        p = produto;
+        return repository.save(p);
     }
 }

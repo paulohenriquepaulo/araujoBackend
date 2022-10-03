@@ -4,41 +4,40 @@ import app.model.enums.DisponibilidadeProduto;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "TB_PRODUTO")
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codProduto;
 
-    @Column(name="Nome")
-    @Size(max=100, message="O campo nome deve conter no máximo 100 caracteres!")
+    @Column(name = "Nome")
+    @Size(max = 100, message = "O campo nome deve conter no máximo 100 caracteres!")
     @NotBlank(message = "O campo Nome não pode ser nulo ou vazio!")
     private String nome;
 
-    @Column(name="quantidade")
-    @Size(min=1, message="O campo nome deve conter no máximo 100 caracteres!")
-    @NotBlank(message = "O campo quantidade não pode ser nulo ou vazio!")
+    @Column(name = "quantidade")
+    @NotNull(message = "O campo quantidade não pode ser nulo ou vazio!")
     private Integer quantidade;
 
-    @Column(name= "valor unitario")
-    @NotBlank(message="O campo valor unitário não pode ser vazio")
+    @Column(name = "valor_unitario")
+    @NotNull(message = "O campo valor unitário não pode ser vazio")
     private float valorUnitario;
 
-    @Column(name="descricao")
+    @Column(name = "descricao")
     @NotBlank(message = "O campo descrição não pode ser nulo ou vazio!")
     private String descricao;
 
-    @Column(name="imagem")
+    @Column(name = "imagem")
     @NotBlank(message = "O campo imagem não pode ser nulo ou vazio!")
     private String imagemProduto;
 
-   @Enumerated(EnumType.STRING)
-   @Column(name="Disponibilidade")
-   private DisponibilidadeProduto disponibilidade;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Disponibilidade")
+    private DisponibilidadeProduto disponibilidade;
 
 
     public Long getCodProduto() {
