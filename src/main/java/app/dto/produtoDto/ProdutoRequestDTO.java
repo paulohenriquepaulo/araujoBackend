@@ -5,6 +5,7 @@ import app.model.enums.DisponibilidadeProduto;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class ProdutoRequestDTO {
@@ -13,13 +14,11 @@ public class ProdutoRequestDTO {
     @NotBlank(message = "O campo Nome não pode ser nulo ou vazio!")
     private String nome;
 
-
-    @Size(min=1, message="O campo nome deve conter no máximo 100 caracteres!")
-    @NotBlank(message = "O campo quantidade não pode ser nulo ou vazio!")
+    @NotNull(message = "O campo quantidade não pode ser nulo ou vazio!")
     private Integer quantidade;
 
 
-    @NotBlank(message="O campo valor unitário não pode ser vazio")
+    @NotNull(message="O campo valor unitário não pode ser vazio")
     private float valorUnitario;
 
 

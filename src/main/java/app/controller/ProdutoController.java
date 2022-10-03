@@ -26,7 +26,8 @@ public class ProdutoController {
 
     @PostMapping
     public ResponseEntity<ProdutoResponseDTO> cadastrarProduto(@RequestBody @Valid ProdutoRequestDTO dto){
-        Produto novoProduto = service.cadastrarProduto(mapper.toProduto(dto));
+        Produto novoProduto = mapper.toProduto(dto);
+        service.cadastrarProduto(novoProduto);
         return ResponseEntity.ok(mapper.toProdutoResponseDTO(novoProduto));
     }
 }
