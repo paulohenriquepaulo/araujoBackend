@@ -26,7 +26,7 @@ public class Endereco {
 	@NotBlank(message = "O campo Cidade não pode ser nulo ou vazio!")
 	private String cidade;
 
-	
+
 	@Column(name="BAIRRO")
 	@Size(max = 100, message = "O Bairro deve conter no máximo 100 caracter!")
 	@NotBlank(message = "O campo Bairro não pode ser nulo ou vazio!")

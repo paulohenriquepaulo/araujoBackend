@@ -5,100 +5,100 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import app.dto.enderecoDto.EnderecoRequestDTO;
 import org.hibernate.validator.constraints.br.CPF;
 
-import app.model.Endereco;
 
 public class ClienteRequestDTO {
 
-	@NotBlank(message = "O Nome não pode ser vazio!")
-	@Size(max = 100, message = "O Nome deve conter no máximo 100 caracter!")
-	private String nome;
+    @NotBlank(message = "O Nome não pode ser vazio!")
+    @Size(max = 100, message = "O Nome deve conter no máximo 100 caracter!")
+    private String nome;
 
-	@NotBlank(message = "O Sobrenome não pode ser vazio!")
-	@Size(max = 100, message = "O Sobrenome deve conter no máximo 100 caracter!")
-	private String sobrenome;
+    @NotBlank(message = "O Sobrenome não pode ser vazio!")
+    @Size(max = 100, message = "O Sobrenome deve conter no máximo 100 caracter!")
+    private String sobrenome;
 
-	@NotBlank(message = "A Senha não pode ser vazia!")
-	@Size(min = 6, message = "A Senha deve conter no mínimo 6 caracter!")
-	private String senha;
+    @NotBlank(message = "A Senha não pode ser vazia!")
+    @Size(min = 6, message = "A Senha deve conter no mínimo 6 caracter!")
+    private String senha;
 
-	private String telefone;
+    private String telefone;
 
-	@CPF(message = "CPF inválido!")
-	@Size(min = 11, max = 11, message = "O CPF deve conter 11 digitos!")
-	private String cpf;
+    @CPF(message = "CPF inválido!")
+    @Size(min = 11, max = 11, message = "O CPF deve conter 11 digitos!")
+    private String cpf;
 
-	@NotBlank(message = "O E-mail não pode ser vazio!")
-	@Size(max = 100, message = "O E-mail deve conter no máximo 100 caracter!")
-	private String email;
+    @NotBlank(message = "O E-mail não pode ser vazio!")
+    @Size(max = 100, message = "O E-mail deve conter no máximo 100 caracter!")
+    private String email;
 
-	@NotBlank(message = "O RG não pode ser vazio!")
-	private String rg;
+    @NotBlank(message = "O RG não pode ser vazio!")
+    private String rg;
 
-	private List<Endereco> endereco;
+    private List<EnderecoRequestDTO> endereco;
 
-	public String getNome() {
-		return nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
+    public String getSobrenome() {
+        return sobrenome;
+    }
 
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public String getSenha() {
+        return senha;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-	public String getTelefone() {
-		return telefone;
-	}
+    public String getTelefone() {
+        return telefone;
+    }
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-	public String getCpf() {
-		return cpf;
-	}
+    public String getCpf() {
+        return cpf;
+    }
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getRg() {
-		return rg;
-	}
+    public String getRg() {
+        return rg;
+    }
 
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
 
-	public List<Endereco> getEndereco() {
-		return endereco;
-	}
+    public List<EnderecoRequestDTO> getEndereco() {
+        return endereco;
+    }
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
-	}
+    public void setEndereco(List<EnderecoRequestDTO> endereco) {
+        this.endereco = endereco;
+    }
 }
