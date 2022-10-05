@@ -15,7 +15,8 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne
+	@ManyToOne
+
 	private Cliente cliente;
 	
 	@Column(name="CEP")

@@ -1,6 +1,6 @@
 package app.dto.enderecoDto;
 
-import app.model.Cliente;
+import app.model.enums.UnidadeFederativa;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -8,13 +8,10 @@ import javax.validation.constraints.Size;
 
 public class EnderecoRequestDTO {
 
-
-
     @Column(name = "CEP")
     @Size(min = 9, max = 9, message = "O CEP deve estar no formato 99999-999")
     @NotBlank(message = "O cep não pode ser nulo ou vazio!")
     private String cep;
-
 
     @Column(name = "CIDADE")
     @Size(max = 100, message = "A Cidade deve conter no máximo 100 caracter!")
@@ -30,7 +27,7 @@ public class EnderecoRequestDTO {
 
     @Column(name = "UF")
     @Size(max = 2, min = 2, message = "A UF deve conter no máximo 2 caracter")
-    private String uf;
+    private UnidadeFederativa uf;
 
 
     @Size(min = 1, max = 10, message = "O numero deve ter no mínimo 1 e no máximo 10 caracteres!")
@@ -75,11 +72,11 @@ public class EnderecoRequestDTO {
     }
 
 
-    public String getUf() {
+    public UnidadeFederativa getUf() {
         return uf;
     }
 
-    public void setUf(String uf) {
+    public void setUf(UnidadeFederativa uf) {
         this.uf = uf;
     }
 
