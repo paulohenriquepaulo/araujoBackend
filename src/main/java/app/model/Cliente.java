@@ -49,7 +49,7 @@ public class Cliente {
 	private String rg;
 
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-	private List<Endereco> endereco;
+	private List<Endereco> enderecos;
 
 	@OneToOne(mappedBy = "cliente", cascade = CascadeType.PERSIST)
 	private Transacao transacao;
@@ -118,12 +118,12 @@ public class Cliente {
 		this.rg = rg;
 	}
 
-	public List<Endereco> getEndereco() {
-		return endereco;
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	public Transacao getTransacao() {

@@ -36,7 +36,7 @@ public class ClienteRequestDTO {
     @NotBlank(message = "O RG não pode ser vazio!")
     private String rg;
 
-    private List<EnderecoRequestDTO> endereco;
+    private List<EnderecoRequestDTO> enderecos;
 
     public String getNome() {
         return nome;
@@ -94,11 +94,11 @@ public class ClienteRequestDTO {
         this.rg = rg;
     }
 
-    public List<EnderecoRequestDTO> getEndereco() {
-        return endereco;
+    public List<EnderecoRequestDTO> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(List<EnderecoRequestDTO> endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<EnderecoRequestDTO> enderecos) {
+        this.enderecos = enderecos;
     }
 }

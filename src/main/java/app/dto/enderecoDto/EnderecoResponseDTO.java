@@ -1,40 +1,19 @@
 package app.dto.enderecoDto;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+public class EnderecoResponseDTO {
 
-public class EnderecoRequestDTO {
-
-    @Column(name = "CEP")
-    @Size(min = 9, max = 9, message = "O CEP deve estar no formato 99999-999")
-    @NotBlank(message = "O cep não pode ser nulo ou vazio!")
     private String cep;
 
-    @Column(name = "CIDADE")
-    @Size(max = 100, message = "A Cidade deve conter no máximo 100 caracter!")
     private String cidade;
 
-    @Column(name = "BAIRRO")
-    @Size(max = 100, message = "O Bairro deve conter no máximo 100 caracter!")
     private String bairro;
 
-    @Column(name = "RUA")
-    @Size(max = 100, message = "A Rua deve conter no máximo 100 caracter!")
     private String rua;
 
-    @Column(name = "UF")
-    @Size(max = 2, min = 2, message = "A UF deve conter no máximo 2 caracter")
     private String uf;
 
-
-    @Size(min = 1, max = 10, message = "O numero deve ter no mínimo 1 e no máximo 10 caracteres!")
-    @NotBlank(message = "O número não pode ser nulo ou vazio!")
-    @Column(name = "NUMERO")
     private String numero;
 
-    @Column(name = "COMPLEMENTO")
-    @Size(max = 100, message = "O Complemento deve conter no máximo 100 caracter!")
     private String complemento;
 
     public String getCep() {
@@ -69,7 +48,6 @@ public class EnderecoRequestDTO {
         this.rua = rua;
     }
 
-
     public String getUf() {
         return uf;
     }
@@ -93,6 +71,4 @@ public class EnderecoRequestDTO {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-
-
 }

@@ -12,7 +12,8 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne
+	@ManyToOne
+
 	private Cliente cliente;
 	
 	@Column(name="CEP")
@@ -41,8 +42,7 @@ public class Endereco {
 	@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
 	@NotBlank(message = "O campp UF não pode ser nulo ou vazio!")
 	private String uf;
-	
-	
+
 	@Size(min = 1, max = 10, message = "O numero deve ter no mínimo 1 e no máximo 10 caracteres!")
 	@NotBlank(message = "O número não pode ser nulo ou vazio!")
 	@Column(name="NUMERO")

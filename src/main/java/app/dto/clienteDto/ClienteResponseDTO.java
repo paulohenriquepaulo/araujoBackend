@@ -1,7 +1,8 @@
 package app.dto.clienteDto;
 
 import java.util.List;
-import app.model.Endereco;
+
+import app.dto.enderecoDto.EnderecoResponseDTO;
 
 public class ClienteResponseDTO {
 
@@ -13,7 +14,7 @@ public class ClienteResponseDTO {
 	private String cpf;
 	private String email;
 	private String rg;
-	private List<Endereco> endereco;
+	private List<EnderecoResponseDTO> enderecos;
 
 	public Long getId() {
 		return id;
@@ -79,12 +80,11 @@ public class ClienteResponseDTO {
 		this.rg = rg;
 	}
 
-	public List<Endereco> getEndereco() {
-		return endereco;
+	public List<EnderecoResponseDTO> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
+	public void setEnderecos(List<EnderecoResponseDTO> enderecos) {
+		this.enderecos = enderecos;
 	}
-
 }
