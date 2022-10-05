@@ -21,6 +21,7 @@ app\dto\enderecoDto\EnderecoResponseDTO.class
 app\mapper\ClienteMapper.class
 app\model\Cliente.class
 app\controller\advice\AraujoAdvice.class
+app\model\enums\UnidadeFederativa.class
 app\dto\enderecoDto\EnderecoRequestDTO.class
 app\dto\carrinhoDto\CarrinhoRequestDTO.class
 app\model\Produto.class

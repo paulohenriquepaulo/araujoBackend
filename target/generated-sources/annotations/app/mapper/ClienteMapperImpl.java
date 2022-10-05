@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-04T10:09:14-0300",
+    date = "2022-10-05T14:50:01-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.17 (IBM Corporation)"
 )
 @Component
@@ -102,7 +102,9 @@ public class ClienteMapperImpl implements ClienteMapper {
         enderecoResponseDTO.setCidade( endereco.getCidade() );
         enderecoResponseDTO.setBairro( endereco.getBairro() );
         enderecoResponseDTO.setRua( endereco.getRua() );
-        enderecoResponseDTO.setUf( endereco.getUf() );
+        if ( endereco.getUf() != null ) {
+            enderecoResponseDTO.setUf( endereco.getUf().name() );
+        }
         enderecoResponseDTO.setNumero( endereco.getNumero() );
         enderecoResponseDTO.setComplemento( endereco.getComplemento() );
 
