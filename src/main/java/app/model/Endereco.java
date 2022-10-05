@@ -43,7 +43,6 @@ public class Endereco {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "UF")
-	//@Size(max = 2, min=2, message = "A UF deve conter no máximo 2 caracter")
 	@NotNull(message = "O campo UF não pode ser nulo ou vazio!")
 	private UnidadeFederativa uf;
 	
