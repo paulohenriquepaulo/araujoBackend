@@ -10,7 +10,8 @@ import java.util.List;
 
 
 @Entity
-public class Carrinho {
+@Table(name= "TB_PEDIDOS")
+public class Pedidos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +26,8 @@ public class Carrinho {
     @Column(name = "STATUS")
     private StatusPedido status;
 
-    @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL)
-    private List<ItemPedido> pedidos;
+    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL)
+    private List<ItemPedido> itensPedidos;
 
     @OneToOne
     private Transacao transacao;
@@ -61,12 +62,12 @@ public class Carrinho {
         this.status = status;
     }
 
-    public List<ItemPedido> getPedidos() {
-        return pedidos;
+    public List<ItemPedido> getItensPedidos() {
+        return itensPedidos;
     }
 
-    public void setPedidos(List<ItemPedido> pedidos) {
-        this.pedidos = pedidos;
+    public void setItensPedidos(List<ItemPedido> itensPedidos) {
+        this.itensPedidos = itensPedidos;
     }
 
     public Transacao getTransacao() {
