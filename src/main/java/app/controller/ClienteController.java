@@ -2,12 +2,12 @@ package app.controller;
 
 import javax.validation.Valid;
 
+import app.dto.clienteDto.ClienteLoginDTO;
+import app.exeception.AraujoExeception;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import app.dto.clienteDto.ClienteRequestDTO;
 import app.dto.clienteDto.ClienteResponseDTO;
@@ -29,6 +29,14 @@ public class ClienteController {
 	public ResponseEntity<ClienteResponseDTO> cadastrarCliente(@RequestBody @Valid ClienteRequestDTO dto) {
 		Cliente novoCliente = service.cadastarCliente(mapper.toCliente(dto));
 		return ResponseEntity.ok(mapper.toClienteResponseDTO(novoCliente));
+	}
+
+	@GetMapping("/login")
+	public ResponseEntity<String> login(@RequestBody @Valid ClienteLoginDTO dto) {
+		if(service.validarLogin(dto)){
+			return ResponseEntity.ok("Login efetuado com sucesso!");
+		};
+		throw new AraujoExeception("Email e/ou senha inválidos!", HttpStatus.UNPROCESSABLE_ENTITY);
 	}
 }
 

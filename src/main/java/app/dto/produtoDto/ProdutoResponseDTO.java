@@ -4,7 +4,7 @@ import app.model.enums.DisponibilidadeProduto;
 
 public class ProdutoResponseDTO {
 
-    private Long id;
+    private Long codProduto;
     private String nome;
     private Integer quantidade;
     private float valorUnitario;
@@ -12,12 +12,12 @@ public class ProdutoResponseDTO {
     private String imagemProduto;
     private DisponibilidadeProduto disponibilidade;
 
-    public Long getId() {
-        return id;
+    public Long getcodProduto() {
+        return codProduto;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setcodProduto(Long id) {
+        this.codProduto = codProduto;
     }
 
     public String getNome() {
