@@ -32,11 +32,12 @@ public class ClienteController {
 	}
 
 	@GetMapping("/login")
-	public ResponseEntity<String> login(@RequestBody @Valid ClienteLoginDTO dto) {
-		if(service.validarLogin(dto)){
-			return ResponseEntity.ok("Login efetuado com sucesso!");
-		};
-		throw new AraujoExeception("Email e/ou senha inválidos!", HttpStatus.UNPROCESSABLE_ENTITY);
+	public ResponseEntity<ClienteResponseDTO> login(@RequestBody @Valid ClienteLoginDTO dto) {
+		ClienteResponseDTO clienteResponseDTO = mapper.toClienteResponseDTO(service.validarLogin(dto));
+		if(clienteResponseDTO != null){
+			return ResponseEntity.ok(clienteResponseDTO);
+		}
+		throw new AraujoExeception("Falha ao realizar login", HttpStatus.UNPROCESSABLE_ENTITY);
 	}
 }
 
