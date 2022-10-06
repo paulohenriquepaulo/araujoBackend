@@ -1,13 +1,10 @@
-package app.dto.carrinhoDto;
-
+package app.dto.pedidosDto;
 import app.model.ItemPedido;
-import app.model.Transacao;
 import app.model.enums.StatusPedido;
-
 import java.time.LocalDate;
 import java.util.List;
 
-public class CarrinhoResponseDTO {
+public class PedidosResponseDTO {
 
     private Long id;
 

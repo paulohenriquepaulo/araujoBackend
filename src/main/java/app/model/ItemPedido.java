@@ -11,10 +11,10 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pedido;
 
-    @NotBlank(message = "O Id do carrinho não pode ser vazio")
+    @NotBlank(message = "O Id do pedido não pode ser vazio")
     @ManyToOne
-    @JoinColumn(name = "ID_CARRINHO")
-    private Carrinho carrinho;
+    @JoinColumn(name = "ID_PEDIDOS")
+    private Pedidos pedidos;
 
     @NotBlank(message = "O Id do produto não pode ser vazio")
     @ManyToOne
@@ -41,12 +41,12 @@ public class ItemPedido {
         this.id_pedido = id;
     }
 
-    public Carrinho getCarrinho() {
-        return carrinho;
+    public Pedidos getCarrinho() {
+        return pedidos;
     }
 
-    public void setCarrinho(Carrinho carrinho) {
-        this.carrinho = carrinho;
+    public void setCarrinho(Pedidos pedidos) {
+        this.pedidos = pedidos;
     }
 
     public Produto getProduto() {
