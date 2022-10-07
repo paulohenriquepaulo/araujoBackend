@@ -1,9 +1,6 @@
 package app.controller.advice;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
+import app.exeception.AraujoExeception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -12,8 +9,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import app.exeception.AraujoExeception;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 
@@ -31,7 +30,6 @@ public class AraujoAdvice {
 		});
 		return errors;
 	}
-
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
@@ -51,12 +49,10 @@ public class AraujoAdvice {
 		return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED.value()).body(errors);
 	}
 
-
-
 	@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
 	@ExceptionHandler(AraujoExeception.class)
-	public Map<String, String> handlerDataIntegrityViolationException(AraujoExeception ex) {
-		return ex.getErrors();
+	public ResponseEntity<Map<String, String>> handlerDataIntegrityViolationException(AraujoExeception ex) {
+		return ResponseEntity.status(ex.getStatus()).body(ex.getErrors());
 	}
 
 	@ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)

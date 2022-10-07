@@ -19,27 +19,25 @@ import app.service.ClienteService;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
-	
-	@Autowired
-	private ClienteService service;
-	
-	@Autowired
-	private ClienteMapper mapper;
-	
-	@PostMapping
-	public ResponseEntity<ClienteResponseDTO> cadastrarCliente(@RequestBody @Valid ClienteRequestDTO dto) {
-		Cliente novoCliente = service.cadastarCliente(mapper.toCliente(dto));
-		return ResponseEntity.ok(mapper.toClienteResponseDTO(novoCliente));
-	}
 
-	@GetMapping("/login")
-	public ResponseEntity<ClienteLoginResponseDTO> login(@RequestBody @Valid ClienteLoginRequestDTO dto) {
-		Cliente cli =service.validarLogin(dto);
-		if(cli != null){
-			return ResponseEntity.ok(mapper.toClienteLoginResponseDTO(cli));
-		}
-		throw new AraujoExeception("Falha ao realizar login", HttpStatus.UNPROCESSABLE_ENTITY);
-	}
+    @Autowired
+    private ClienteService service;
+
+    @Autowired
+    private ClienteMapper mapper;
+
+    @PostMapping
+    public ResponseEntity<ClienteResponseDTO> cadastrarCliente(@RequestBody @Valid ClienteRequestDTO dto) {
+        Cliente novoCliente = service.cadastarCliente(mapper.toCliente(dto));
+        return ResponseEntity.ok(mapper.toClienteResponseDTO(novoCliente));
+    }
+
+
+    @GetMapping("/login")
+    public ResponseEntity<ClienteLoginResponseDTO> login(@RequestBody @Valid ClienteLoginRequestDTO dto) {
+        Cliente cli = service.validarLogin(dto.getEmail(), dto.getSenha());
+        return ResponseEntity.ok(mapper.toClienteLoginResponseDTO(cli));
+    }
 }
 
 
