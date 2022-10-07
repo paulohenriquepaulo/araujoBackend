@@ -7,10 +7,7 @@ import app.model.Produto;
 import app.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -25,9 +22,11 @@ public class ProdutoController {
     private ProdutoMapper mapper;
 
     @PostMapping
-    public ResponseEntity<ProdutoResponseDTO> cadastrarProduto(@RequestBody @Valid ProdutoRequestDTO dto){
+    public ResponseEntity<ProdutoResponseDTO> cadastrarProduto(@RequestBody @Valid ProdutoRequestDTO dto,
+                                                               @RequestHeader("email") String email,
+                                                               @RequestHeader("senha") String senha) {
         Produto novoProduto = mapper.toProduto(dto);
-        service.cadastrarProduto(novoProduto);
+        service.cadastrarProduto(novoProduto, email, senha);
         return ResponseEntity.ok(mapper.toProdutoResponseDTO(novoProduto));
     }
 }
