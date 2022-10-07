@@ -6,7 +6,6 @@ import app.dto.enderecoDto.EnderecoResponseDTO;
 
 public class ClienteResponseDTO {
 
-
 	private Long id;
 	private String nome;
 	private String sobrenome;

@@ -1,5 +1,6 @@
 package app.mapper;
 
+import app.dto.clienteDto.ClienteLoginResponseDTO;
 import app.dto.clienteDto.ClienteRequestDTO;
 import app.dto.clienteDto.ClienteResponseDTO;
 import app.dto.enderecoDto.EnderecoRequestDTO;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-06T13:40:42-0300",
+    date = "2022-10-07T10:50:01-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.17 (IBM Corporation)"
 )
 @Component
@@ -58,6 +59,26 @@ public class ClienteMapperImpl implements ClienteMapper {
         clienteResponseDTO.setEnderecos( enderecoListToEnderecoResponseDTOList( cli.getEnderecos() ) );
 
         return clienteResponseDTO;
+    }
+
+    @Override
+    public ClienteLoginResponseDTO toClienteLoginResponseDTO(Cliente cli) {
+        if ( cli == null ) {
+            return null;
+        }
+
+        ClienteLoginResponseDTO clienteLoginResponseDTO = new ClienteLoginResponseDTO();
+
+        clienteLoginResponseDTO.setId( cli.getId() );
+        clienteLoginResponseDTO.setNome( cli.getNome() );
+        clienteLoginResponseDTO.setSobrenome( cli.getSobrenome() );
+        clienteLoginResponseDTO.setSenha( cli.getSenha() );
+        clienteLoginResponseDTO.setTelefone( cli.getTelefone() );
+        clienteLoginResponseDTO.setCpf( cli.getCpf() );
+        clienteLoginResponseDTO.setEmail( cli.getEmail() );
+        clienteLoginResponseDTO.setRg( cli.getRg() );
+
+        return clienteLoginResponseDTO;
     }
 
     protected Endereco enderecoRequestDTOToEndereco(EnderecoRequestDTO enderecoRequestDTO) {
