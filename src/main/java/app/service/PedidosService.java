@@ -1,5 +1,6 @@
 package app.service;
 
+import app.dto.pedidosDto.PedidosRequestDTO;
 import app.exeception.AraujoExeception;
 import app.model.Cliente;
 import app.model.Pedidos;
@@ -23,19 +24,26 @@ public class PedidosService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-
-    public Pedidos cadastrarPedidos(Pedidos pedidos, String email, String senha) {
-        Cliente cliente = clienteService.validarLogin(email, senha);
-        for (int i = 0; i < pedidos.getItensPedidos().size(); i++) {
-            validarProduto(pedidos.getItensPedidos().get(i).getId());
-        }
-        Pedidos p = new Pedidos();
-        p.setDataTransacao(LocalDate.now());
-        p.setItensPedidos(pedidos.getItensPedidos());
-        p.setStatus(StatusPedido.PROCESSANDO);
-        //p.setTransacao(); // em andamento
-        return null;
-    }
+    // Alterações sendo feitas
+//    public Pedidos cadastrarPedidos(PedidosRequestDTO pedidos, String email, String senha) {
+//        Cliente cliente = clienteService.validarLogin(email, senha);
+//        for (int i = 0; i < pedidos.getPedidos().size(); i++) {
+//            validarProduto(pedidos.getPedidos().get(i).getCodProduto());
+//        }
+//        Pedidos p = new Pedidos();
+//        p.setDataTransacao(LocalDate.now());
+//        p.setItensPedidos(pedidos.getPedidos().);
+//        p.setStatus(StatusPedido.PROCESSANDO);
+//        p.setTransacao(cliente.getTransacao());
+//
+//        Double valorTotalPedidos = 0.0;
+//        for (int i = 0; i < pedidos.getItensPedidos().size(); i++) {
+//            pedidos.getItensPedidos().get(i).setValorTotal(pedidos.getItensPedidos().get(i).getValorUnitario() * pedidos.getItensPedidos().get(i).getQuantidade());
+//            valorTotalPedidos += pedidos.getItensPedidos().get(i).getValorTotal();
+//        }
+//        p.setValorTotal(valorTotalPedidos);
+//        return pedidosRepository.save(p);
+//    }
 
     public void validarProduto(Long id) {
         if (!produtoRepository.existsById(id)) {

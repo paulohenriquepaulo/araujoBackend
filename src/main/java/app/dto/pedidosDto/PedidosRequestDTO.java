@@ -1,12 +1,13 @@
 package app.dto.pedidosDto;
 
+import app.dto.itensPedidosDto.ItensPedidosRequestDTO;
 import app.model.ItemPedido;
 
 import java.util.List;
 
 public class PedidosRequestDTO {
 
-    private List<ItemPedido> pedidos;
+    private List<ItensPedidosRequestDTO> pedidos;
 
 //    private String email;
 //    private String senha;
@@ -27,11 +28,11 @@ public class PedidosRequestDTO {
 //        this.senha = senha;
 //    }
 
-    public List<ItemPedido> getPedidos() {
+    public List<ItensPedidosRequestDTO> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<ItemPedido> pedidos) {
+    public void setPedidos(List<ItensPedidosRequestDTO> pedidos) {
         this.pedidos = pedidos;
     }
 }

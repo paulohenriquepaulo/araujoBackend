@@ -26,14 +26,14 @@ public class Pedidos {
     @Column(name = "STATUS")
     private StatusPedido status;
 
-    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pedidos", cascade = CascadeType.PERSIST)
     private List<ItemPedido> itensPedidos;
 
     @OneToOne
     private Transacao transacao;
 
     @NotBlank(message = "A Data não pode ser vazia!")
-    @Column(name = "DATA_PEDIO")
+    @Column(name = "DATA_PEDIDO")
     @NotNull
     private LocalDate dataTransacao;
 
