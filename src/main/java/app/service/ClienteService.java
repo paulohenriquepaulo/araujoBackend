@@ -1,6 +1,7 @@
 package app.service;
 
-import app.dto.clienteDto.ClienteLoginDTO;
+import app.dto.clienteDto.ClienteLoginRequestDTO;
+import app.dto.clienteDto.ClienteLoginResponseDTO;
 import app.exeception.AraujoExeception;
 import app.model.Cliente;
 import app.model.Transacao;
@@ -37,7 +38,7 @@ public class ClienteService {
 		}
 	}
 
-	public Cliente validarLogin(ClienteLoginDTO dto){
+	public Cliente validarLogin(ClienteLoginRequestDTO dto){
 		Cliente cliente = null;
 		if(repository.existsByEmail(dto.getEmail())){
 			String senha = repository.getSenhaByEmail(dto.getEmail());
