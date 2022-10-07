@@ -1,6 +1,7 @@
 package app.service;
 
-import app.dto.clienteDto.ClienteLoginDTO;
+import app.dto.clienteDto.ClienteLoginRequestDTO;
+import app.dto.clienteDto.ClienteLoginResponseDTO;
 import app.exeception.AraujoExeception;
 import app.model.Cliente;
 import app.model.Transacao;
@@ -8,8 +9,6 @@ import app.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class ClienteService {
@@ -39,13 +38,14 @@ public class ClienteService {
 		}
 	}
 
-	public boolean validarLogin(ClienteLoginDTO clienteLoginDTO){
-		if(repository.existsByEmail(clienteLoginDTO.getEmail())){
-			String senha = repository.getSenhaByEmail(clienteLoginDTO.getEmail());
-			if(clienteLoginDTO.getSenha().equals(senha)){
-				return true;
+	public Cliente validarLogin(ClienteLoginRequestDTO dto){
+		Cliente cliente = null;
+		if(repository.existsByEmail(dto.getEmail())){
+			String senha = repository.getSenhaByEmail(dto.getEmail());
+			if(dto.getSenha().equals(senha)){
+				cliente = repository.getByEmail(dto.getEmail());
 			}
 		}
-		return false;
+		return cliente;
 	}
 }
