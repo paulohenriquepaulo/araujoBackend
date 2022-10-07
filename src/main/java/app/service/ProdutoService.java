@@ -11,7 +11,11 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository repository;
 
-    public Produto cadastrarProduto(Produto produto){
+    @Autowired
+    private ClienteService service;
+
+    public Produto cadastrarProduto(Produto produto, String email, String senha) {
+        service.validarLogin(email, senha);
         Produto p = new Produto();
         p = produto;
         return repository.save(p);

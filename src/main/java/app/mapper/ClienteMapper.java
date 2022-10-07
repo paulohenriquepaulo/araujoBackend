@@ -15,4 +15,6 @@ public interface ClienteMapper {
 	ClienteResponseDTO toClienteResponseDTO(Cliente cli);
 
 	ClienteLoginResponseDTO toClienteLoginResponseDTO(Cliente cli);
+
+
 }
