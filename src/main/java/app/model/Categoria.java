@@ -14,7 +14,7 @@ public class Categoria {
     @NotBlank(message = "O campo Nome não pode ser nulo ou vazio")
     private String nome;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoria")
     private List<Produto> produto;
 
     public Long getId() {

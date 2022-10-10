@@ -43,7 +43,7 @@ public class ClienteService {
         if (repository.existsByEmail(email)) {
             String senhaUsuario = repository.getSenhaByEmail(email);
             if (senha.equals(senhaUsuario)) {
-                cliente = repository.getByEmail(senha);
+                cliente = repository.getByEmail(email);
             } else {
                 throw new AraujoExeception(mensagemErro, HttpStatus.UNAUTHORIZED);
             }
