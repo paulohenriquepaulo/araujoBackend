@@ -1,9 +1,12 @@
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\Endereco.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\itensPedidosDto\ItensPedidosRequestDTO.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\categoriaDto\CategoriaRequestDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\Cliente.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\mapper\ProdutoMapper.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\controller\CategoriaController.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\Transacao.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\pedidosDto\PedidosRequestDTO.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\service\CategoriaService.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\enderecoDto\EnderecoRequestDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\controller\advice\AraujoAdvice.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\exeception\AraujoExeception.java
@@ -17,8 +20,10 @@ C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\repository\Produto
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\produtoDto\ProdutoRequestDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\controller\PedidosController.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\Application.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\Categoria.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\service\PedidosService.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\controller\ClienteController.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\categoriaDto\CategoriaResponseDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\mapper\PedidosMapper.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\clienteDto\ClienteLoginResponseDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\service\ClienteService.java
@@ -29,7 +34,9 @@ C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\enums\Status
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\model\ItemPedido.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\itensPedidosDto\ItensPedidosResponseDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\clienteDto\ClienteResponseDTO.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\mapper\CategoriaMapper.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\repository\PedidosRepository.java
+C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\repository\CategoriaRepository.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\pedidosDto\PedidosResponseDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\dto\enderecoDto\EnderecoResponseDTO.java
 C:\Users\00787795\Desktop\Git\araujoBackend\src\main\java\app\mapper\ClienteMapper.java
