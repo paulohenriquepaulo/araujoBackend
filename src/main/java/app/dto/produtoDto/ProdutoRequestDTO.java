@@ -1,9 +1,11 @@
 package app.dto.produtoDto;
 
+import app.model.Categoria;
 import app.model.enums.DisponibilidadeProduto;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,6 +30,8 @@ public class ProdutoRequestDTO {
 
     @NotBlank(message = "O campo imagem não pode ser nulo ou vazio!")
     private String imagemProduto;
+
+    private Long categoria;
 
     @Enumerated(EnumType.STRING)
     private DisponibilidadeProduto disponibilidade;
@@ -71,6 +75,10 @@ public class ProdutoRequestDTO {
     public void setImagemProduto(String imagemProduto) {
         this.imagemProduto = imagemProduto;
     }
+
+    public Long getCategoria() { return categoria; }
+
+    public void setCategoria(Long categoria) { this.categoria = categoria; }
 
     public DisponibilidadeProduto getDisponibilidade() {
         return disponibilidade;
