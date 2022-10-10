@@ -14,6 +14,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codProduto;
 
+    @ManyToOne
+    private Categoria categoria;
+
     @Column(name = "Nome")
     @Size(max = 100, message = "O campo nome deve conter no máximo 100 caracteres!")
     @NotBlank(message = "O campo Nome não pode ser nulo ou vazio!")
@@ -94,5 +97,13 @@ public class Produto {
 
     public void setDisponibilidade(DisponibilidadeProduto disponibilidade) {
         this.disponibilidade = disponibilidade;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
