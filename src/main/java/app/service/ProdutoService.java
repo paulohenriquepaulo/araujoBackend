@@ -21,7 +21,6 @@ public class ProdutoService {
     public Produto cadastrarProduto(Produto produto, String email, String senha) {
         // Validação de login do cliente
         service.validarLogin(email, senha);
-
         // Buscando nome da categoria e atribuindo a resposta
         String nome = categoriaRepository.getNomeById(produto.getCategoria().getId());
         produto.getCategoria().setNome(nome);

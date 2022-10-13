@@ -1,7 +1,7 @@
 package app.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
 
 @Entity
 @Table(name = "TB_ITENS_PEDIDO")
@@ -11,25 +11,22 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pedido;
 
-    @NotBlank(message = "O Id do pedido não pode ser vazio")
     @ManyToOne
     @JoinColumn(name = "ID_PEDIDOS")
     private Pedidos pedidos;
 
-    @NotBlank(message = "O Id do produto não pode ser vazio")
     @ManyToOne
     @JoinColumn(name = "ID_PRODUTO")
     private Produto produto;
 
-    @NotBlank(message = "A quantidade não pode ser vazia")
     @Column(name = "QUANTIDADE")
     private Integer quantidade;
 
-    @NotBlank(message = "O Valor unitário não pode ser vazio!")
+
     @Column(name = "VALOR_UNITARIO")
     private Double valorUnitario;
 
-    @NotBlank(message = "O Valor total não pode ser vazio!")
+
     @Column(name = "VALOR_TOTAL")
     private Double valorTotal;
 
@@ -41,11 +38,19 @@ public class ItemPedido {
         this.id_pedido = id;
     }
 
-    public Pedidos getCarrinho() {
+    public Long getId_pedido() {
+        return id_pedido;
+    }
+
+    public void setId_pedido(Long id_pedido) {
+        this.id_pedido = id_pedido;
+    }
+
+    public Pedidos getPedidos() {
         return pedidos;
     }
 
-    public void setCarrinho(Pedidos pedidos) {
+    public void setPedidos(Pedidos pedidos) {
         this.pedidos = pedidos;
     }
 
