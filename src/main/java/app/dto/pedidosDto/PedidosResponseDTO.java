@@ -1,6 +1,8 @@
 package app.dto.pedidosDto;
-import app.model.ItemPedido;
+
+import app.dto.itensPedidosDto.ItensPedidosResponseDTO;
 import app.model.enums.StatusPedido;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -12,9 +14,9 @@ public class PedidosResponseDTO {
 
     private StatusPedido status;
 
-    private List<ItemPedido> pedidos;
+    private List<ItensPedidosResponseDTO> pedidos;
 
-    private LocalDate dataCompra;
+    private LocalDate dataTransacao;
 
     public Long getId() {
         return id;
@@ -40,20 +42,19 @@ public class PedidosResponseDTO {
         this.status = status;
     }
 
-    public List<ItemPedido> getPedidos() {
+    public List<ItensPedidosResponseDTO> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<ItemPedido> pedidos) {
+    public void setPedidos(List<ItensPedidosResponseDTO> pedidos) {
         this.pedidos = pedidos;
     }
 
-    public LocalDate getDataCompra() {
-        return dataCompra;
+    public LocalDate getDataTransacao() {
+        return dataTransacao;
     }
 
-    public void setDataCompra(LocalDate dataCompra) {
-        this.dataCompra = dataCompra;
+    public void setDataTransacao(LocalDate dataTransacao) {
+        this.dataTransacao = dataTransacao;
     }
-
 }

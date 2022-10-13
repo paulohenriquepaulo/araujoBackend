@@ -11,30 +11,26 @@ import java.util.List;
 
 
 @Entity
-@Table(name= "TB_PEDIDOS")
+@Table(name = "TB_PEDIDOS")
 public class Pedidos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@NotN(message = "O valor total não pode ser vazio!")
     @Column(name = "VALOR_TOTAL")
     private Double valorTotal;
 
-  //  @NotBlank(message = "O status total não pode ser vazio!")
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
     private StatusPedido status;
 
     @OneToMany(mappedBy = "pedidos", cascade = CascadeType.PERSIST)
-   // @JsonIgnoreProperties("pedidos")
     private List<ItemPedido> itensPedidos;
 
     @OneToOne
     private Transacao transacao;
 
-    //@NotBlank(message = "A Data não pode ser vazia!")
     @Column(name = "DATA_PEDIDO")
     private LocalDate dataTransacao;
 
