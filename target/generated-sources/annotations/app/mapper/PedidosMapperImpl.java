@@ -1,6 +1,7 @@
 package app.mapper;
 
 import app.dto.itensPedidosDto.ItensPedidosRequestDTO;
+import app.dto.itensPedidosDto.ItensPedidosResponseDTO;
 import app.dto.pedidosDto.PedidosRequestDTO;
 import app.dto.pedidosDto.PedidosResponseDTO;
 import app.model.ItemPedido;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-13T11:27:58-0300",
+    date = "2022-10-13T14:50:17-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.17 (IBM Corporation)"
 )
 @Component
@@ -42,8 +43,23 @@ public class PedidosMapperImpl implements PedidosMapper {
         pedidosResponseDTO.setId( ped.getId() );
         pedidosResponseDTO.setValorTotal( ped.getValorTotal() );
         pedidosResponseDTO.setStatus( ped.getStatus() );
+        pedidosResponseDTO.setDataTransacao( ped.getDataTransacao() );
 
         return pedidosResponseDTO;
+    }
+
+    @Override
+    public List<ItensPedidosResponseDTO> toListaPedidosResponseDTO(List<ItemPedido> pedidos) {
+        if ( pedidos == null ) {
+            return null;
+        }
+
+        List<ItensPedidosResponseDTO> list = new ArrayList<ItensPedidosResponseDTO>( pedidos.size() );
+        for ( ItemPedido itemPedido : pedidos ) {
+            list.add( itemPedidoToItensPedidosResponseDTO( itemPedido ) );
+        }
+
+        return list;
     }
 
     protected ItemPedido itensPedidosRequestDTOToItemPedido(ItensPedidosRequestDTO itensPedidosRequestDTO) {
@@ -69,5 +85,20 @@ public class PedidosMapperImpl implements PedidosMapper {
         }
 
         return list1;
+    }
+
+    protected ItensPedidosResponseDTO itemPedidoToItensPedidosResponseDTO(ItemPedido itemPedido) {
+        if ( itemPedido == null ) {
+            return null;
+        }
+
+        ItensPedidosResponseDTO itensPedidosResponseDTO = new ItensPedidosResponseDTO();
+
+        itensPedidosResponseDTO.setId_pedido( itemPedido.getId_pedido() );
+        itensPedidosResponseDTO.setQuantidade( itemPedido.getQuantidade() );
+        itensPedidosResponseDTO.setValorUnitario( itemPedido.getValorUnitario() );
+        itensPedidosResponseDTO.setValorTotal( itemPedido.getValorTotal() );
+
+        return itensPedidosResponseDTO;
     }
 }

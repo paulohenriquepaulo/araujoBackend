@@ -22,7 +22,9 @@ public class PedidosController {
     public ResponseEntity<PedidosResponseDTO> cadastrarPedido(@RequestBody PedidosRequestDTO dto, @RequestHeader("email") String email,
                                                               @RequestHeader("senha") String senha) {
         Pedidos novoPedido = service.cadastrarPedidos(dto, email, senha);
-        return ResponseEntity.ok(mapper.toPedidosResponseDTO(novoPedido));
+        PedidosResponseDTO pedidosResponseDTO = mapper.toPedidosResponseDTO(novoPedido);
+        pedidosResponseDTO.setPedidos(mapper.toListaPedidosResponseDTO(novoPedido.getItensPedidos()));
+        return ResponseEntity.ok(pedidosResponseDTO);
 
     }
 
