@@ -15,8 +15,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 	boolean existsByEmail(String email);
 
-	@Query(value = "SELECT senha FROM TB_CLIENTE WHERE email = email", nativeQuery = true)
+	@Query(value = "SELECT senha FROM TB_CLIENTE WHERE email = :email", nativeQuery = true)
 	String getSenhaByEmail(String email);
-	
+
 	Cliente getByEmail(String email);
 }

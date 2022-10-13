@@ -1,2 +1,3 @@
-/araujoBackend/target/
-/.idea/
+.idea
+/target
+

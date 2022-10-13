@@ -1,6 +1,7 @@
 package app.model;
 
 import app.model.enums.StatusPedido;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -17,24 +18,24 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O valor total não pode ser vazio!")
+    //@NotN(message = "O valor total não pode ser vazio!")
     @Column(name = "VALOR_TOTAL")
     private Double valorTotal;
 
-    @NotBlank(message = "O status total não pode ser vazio!")
+  //  @NotBlank(message = "O status total não pode ser vazio!")
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
     private StatusPedido status;
 
     @OneToMany(mappedBy = "pedidos", cascade = CascadeType.PERSIST)
+   // @JsonIgnoreProperties("pedidos")
     private List<ItemPedido> itensPedidos;
 
     @OneToOne
     private Transacao transacao;
 
-    @NotBlank(message = "A Data não pode ser vazia!")
+    //@NotBlank(message = "A Data não pode ser vazia!")
     @Column(name = "DATA_PEDIDO")
-    @NotNull
     private LocalDate dataTransacao;
 
     public Long getId() {
