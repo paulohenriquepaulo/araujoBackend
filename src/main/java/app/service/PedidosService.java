@@ -14,7 +14,6 @@ import app.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -88,10 +87,13 @@ public class PedidosService {
         return Double.parseDouble(valorConvertido);
     }
 
+
     public void validarProduto(Long id) {
         if (!produtoRepository.existsById(id)) {
             throw new AraujoExeception("Produto não encontrado!", HttpStatus.NO_CONTENT);
         }
     }
+
+
 }
 
