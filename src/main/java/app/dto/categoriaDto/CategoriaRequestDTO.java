@@ -1,7 +1,11 @@
 package app.dto.categoriaDto;
 
+import app.model.Produto;
+
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 public class CategoriaRequestDTO {
 

@@ -1,5 +1,7 @@
 package app.dto.produtoDto;
 
+import app.dto.categoriaDto.CategoriaResponseDTO;
+import app.model.Categoria;
 import app.model.enums.DisponibilidadeProduto;
 
 public class ProdutoResponseDTO {
@@ -10,13 +12,16 @@ public class ProdutoResponseDTO {
     private float valorUnitario;
     private String descricao;
     private String imagemProduto;
+
+    private CategoriaResponseDTO categoria;
+
     private DisponibilidadeProduto disponibilidade;
 
-    public Long getcodProduto() {
+    public Long getCodProduto() {
         return codProduto;
     }
 
-    public void setcodProduto(Long id) {
+    public void setCodProduto(Long codProduto) {
         this.codProduto = codProduto;
     }
 
@@ -58,6 +63,14 @@ public class ProdutoResponseDTO {
 
     public void setImagemProduto(String imagemProduto) {
         this.imagemProduto = imagemProduto;
+    }
+
+    public CategoriaResponseDTO getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaResponseDTO categoria) {
+        this.categoria = categoria;
     }
 
     public DisponibilidadeProduto getDisponibilidade() {
