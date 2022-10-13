@@ -17,7 +17,7 @@ import app.model.Cliente;
 import app.service.ClienteService;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
