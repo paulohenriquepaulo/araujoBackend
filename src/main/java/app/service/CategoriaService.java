@@ -24,8 +24,6 @@ public class CategoriaService {
     public void validarCategoria (String nome) {
         if (nome == null) {
             throw new AraujoExeception("Categoria não cadastrada!", HttpStatus.NOT_FOUND);
-
-
         }
     }
 }
