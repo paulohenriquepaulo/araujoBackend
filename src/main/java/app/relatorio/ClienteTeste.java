@@ -5,6 +5,8 @@ public class ClienteTeste {
     private String nome;
     private String cpf;
 
+    private String vaiDaCerto;
+
     public String getNome() {
         return nome;
     }
