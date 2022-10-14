@@ -3,6 +3,7 @@ package app.controller.relatorio;
 import app.model.Cliente;
 import app.model.Produto;
 import app.relatorio.ClienteTeste;
+import app.relatorio.Estoque;
 import app.repository.ClienteRepository;
 import app.repository.ProdutoRepository;
 import net.sf.jasperreports.engine.*;
@@ -29,29 +30,31 @@ public class TesteController {
 
 
     @Autowired
-    private ClienteRepository repository;
+    private ProdutoRepository repository;
 
     @GetMapping
     public ResponseEntity<byte[]> gerarRelatorio() throws JRException, FileNotFoundException {
-        List<ClienteTeste> lista = new ArrayList<>();
+        List<Estoque> lista = new ArrayList<>();
         try {
 
-            for (Cliente c : repository.findAll()) {
-                ClienteTeste t = new ClienteTeste();
-                t.setNome(c.getNome());
-                t.setCpf(c.getCpf());
-                lista.add(t);
+            for (Produto p : repository.findAll()) {
+                Estoque e = new Estoque();
+               e.setNome(p.getNome());
+               e.setValorUnitario(p.getValorUnitario());
+               e.setQuantidade(p.getQuantidade());
+               e.setValorTotal(p.getQuantidade()*p.getValorUnitario());
+                lista.add(e);
             }
             Map<String, Object> empParams = new HashMap<String, Object>();
             empParams.put("Araujo", "app");
-            empParams.put("Teste", new JRBeanCollectionDataSource(lista));
+            empParams.put("Estoque", new JRBeanCollectionDataSource(lista));
 
             JasperPrint empReport =
                     JasperFillManager.fillReport
                             (
                                     JasperCompileManager.compileReport(
                                             ResourceUtils
-                                                    .getFile("classpath:Teste.jrxml")
+                                                    .getFile("classpath:Estoque.jrxml")
                                                     .getAbsolutePath()) // path of the jasper report
                                     , empParams // dynamic parameters
                                     , new JRBeanCollectionDataSource(lista)
@@ -61,7 +64,7 @@ public class TesteController {
             HttpHeaders headers = new HttpHeaders();
             //set the PDF format
             headers.setContentType(MediaType.APPLICATION_PDF);
-            headers.setContentDispositionFormData("filename", "Teste.pdf");
+            headers.setContentDispositionFormData("filename", "Estoque.pdf");
             //create the report in PDF format
             return new ResponseEntity<byte[]>
                     (JasperExportManager.exportReportToPdf(empReport), headers, HttpStatus.OK);
