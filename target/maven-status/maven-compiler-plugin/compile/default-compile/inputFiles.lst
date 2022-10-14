@@ -1,6 +1,7 @@
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\clienteDto\ClienteLoginRequestDTO.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\service\CategoriaService.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\model\Pedidos.java
+C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\relatorio\RelatorioTeste.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\mapper\ClienteMapper.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\repository\ProdutoRepository.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\controller\advice\AraujoAdvice.java
@@ -21,11 +22,14 @@ C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\mapper\Pedid
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\enderecoDto\EnderecoRequestDTO.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\repository\CategoriaRepository.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\model\Produto.java
+C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\relatorio\TesteController.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\service\ProdutoService.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\controller\CategoriaController.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\categoriaDto\CategoriaRequestDTO.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\pedidosDto\PedidosRequestDTO.java
+C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\relatorio\TesteEstoque.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\pedidosDto\PedidosResponseDTO.java
+C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\relatorio\ClienteTeste.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\Application.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\dto\enderecoDto\EnderecoResponseDTO.java
 C:\Users\00787809\Desktop\Paulo\git\araujoBackend\src\main\java\app\model\Categoria.java
